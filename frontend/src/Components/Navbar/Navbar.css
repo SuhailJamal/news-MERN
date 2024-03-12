@@ -1,0 +1,164 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  height: 80px;
+  background-color: #f2f2f2;
+  padding: 10px;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 12%,
+    rgba(6, 5, 82, 1) 19%,
+    rgba(9, 9, 121, 1) 44%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  display: relative;
+}
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+}
+.hamburger-menu {
+  display: none;
+}
+.navbar-links li a {
+  text-decoration: none;
+  color: white;
+
+  text-decoration: none;
+}
+.navbar-brand {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-menu li {
+  list-style: none;
+  margin-right: 10px;
+}
+
+.navbar-menu li a {
+  text-decoration: none;
+  color: #333;
+  padding: 5px;
+}
+.logo {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+.navbar-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 5px;
+  border-radius: 30px;
+  background-color: rgb(47, 36, 145);
+}
+.signin-button {
+  border: none;
+  outline: none;
+  width: 70px;
+  height: 45px;
+  background-color: blue;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+}
+.signup-button {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 70px;
+  height: 45px;
+  color: white;
+  cursor: pointer;
+}
+/* Responsive Styles */
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    position: relative;
+  }
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar-menu {
+    margin-top: 10px;
+  }
+
+  .navbar-menu li {
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+  .hamburger-menu {
+    display: block;
+    display: relative;
+  }
+
+  .navbar-menu .hamburger-menu {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .navbar-menu .hamburger-menu .menu-icon {
+    width: 20px;
+    height: 2px;
+    background-color: #333;
+    margin-right: 5px;
+  }
+  .navbar-buttons {
+    display: none;
+  }
+
+  .menu {
+    position: absolute;
+    right: 9px;
+    top: 48px;
+    z-index: 1000;
+  }
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+  .navbar-title {
+    font-size: 1em;
+  }
+
+  .menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+    width: 100px;
+    background-color: rgb(24, 24, 71);
+    padding: 10px;
+  }
+  .menu-links li a {
+    text-decoration: none;
+    color: white;
+  }
+  .menu-open {
+    display: absolute;
+  }
+  .menu-closed {
+    display: none;
+  }
+}

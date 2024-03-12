@@ -1,46 +1,87 @@
-# Getting Started with Create React App and Redux
+# Project Documentation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+## Backend
 
-## Available Scripts
+### Folder Structure
 
-In the project directory, you can run:
+- **connect**
+  - `database.js`: Contains the MongoDB connection setup.
+- **middleware**
+  - `authMiddleware.js`: Middleware for authentication.
+- **models**
+  - `userModel.js`: Mongoose model for user schema.
+- **routes**
+  - `currentUser.js`: Route for fetching current user information.
+  - `login.js`: Route for user login.
+  - `signup.js`: Route for user signup.
 
-### `npm start`
+### Dependencies
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- `bcrypt`: For password hashing.
+- `dotenv`: For environment variables.
+- `express`: Web framework for Node.js.
+- `jsonwebtoken`: For creating and verifying JSON Web Tokens.
+- `mongoose`: MongoDB object modeling tool.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Authentication Flow
 
-### `npm test`
+1. User signs up with email and password.
+2. Password is hashed and stored securely in the database using bcrypt.
+3. User information is stored in MongoDB.
+4. User logs in with email and password.
+5. Password is compared with the hashed password in the database.
+6. If the password matches, a JSON Web Token (JWT) is generated and sent to the client.
+7. JWT is included in subsequent requests for authentication.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Frontend
 
-### `npm run build`
+### Folder Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **src**
+  - **components**
+    - **Navbar**
+      - `Navbar.jsx`: Component for the navigation bar.
+    - **Footer**
+      - `Footer.jsx`: Component for the footer.
+    - **Login**
+      - `Login.jsx`: Component for user login form.
+  - **assets**: Contains image assets.
+  - **pages**
+    - `Home.jsx`: Home page component.
+    - `Politics.jsx`: Politics page component.
+    - `Games.jsx`: Games page component.
+    - `Sports.jsx`: Sports page component.
+  - `App.jsx`: Main application component.
+  - `index.js`: Entry point of the application.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Dependencies
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- `react`: JavaScript library for building user interfaces.
+- `react-dom`: React package for working with the DOM.
+- `react-router-dom`: React bindings for React Router, used for routing in the application.
+- `axios`: Promise-based HTTP client for making requests to the backend API.
 
-### `npm run eject`
+### Routing
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- `/`: Home page.
+- `/politics`: Politics page.
+- `/games`: Games page.
+- `/sports`: Sports page.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Components
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Navbar**: Displays navigation links.
+- **Footer**: Displays footer information.
+- **Login**: Allows users to log in to the application.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Deployment
 
-## Learn More
+The application can be deployed to a hosting service such as Heroku or Vercel for both the frontend and backend. Ensure that environment variables are properly configured for sensitive information such as database connection strings and JWT secrets.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Future Improvements
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Implement user authentication with JWT.
+- Add more features such as user registration, profile management, and password reset.
+- Improve UI/UX design for better user experience.
+- Implement error handling and validation for forms and user input.
+- Write unit tests and integration tests for backend routes and frontend components.

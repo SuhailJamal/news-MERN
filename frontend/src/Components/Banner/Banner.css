@@ -1,0 +1,56 @@
+/* StyleSheets for desktops */
+.header{
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 12%,
+    rgba(6, 5, 82, 1) 19%,
+    rgba(9, 9, 121, 1) 44%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.iconAndTextContainer {
+  position: absolute;
+  left: 20px;
+  top: 25px;
+  display: flex;
+  align-items: center; /* Align items vertically in the center */
+  color: white; /* Make the text color white */
+  font-size: 1.1em; /* Make the text larger */
+}
+.backIcon {
+  margin-right: 5px;
+  margin-top: 5px;
+  /* Add other styles as needed */
+}
+.header h1 {
+  color: white;
+  font-size: 1.5em;
+}
+
+@media (min-width: 768px) {
+.header {
+  height: 80px;
+  background-color: rgb(224, 200, 205);
+}
+}
+@media (max-width: 767px) {
+  .header {
+    height: 60px;
+    background-color: rgb(224, 200, 205);
+  }
+  .header-left {
+    display: none; /* Hide the text on mobile */
+  }
+  .header h1 {
+    font-size: 1.5em; /* Adjust the font size for mobile */
+  }
+  .iconAndTextContainer {
+    left: 10px;
+    top: 15px;
+  }
+}
