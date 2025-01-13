@@ -16,9 +16,6 @@ app.use(cors());
 const Port =  process.env.PORT || 5000;
 
 connectDB();
-app.get("/", (req, res) => {
-  res.send("hello bro");
-});
 
 app.use("/api/signup", signUpRouter);
 app.use("/api/login", logInRouter);

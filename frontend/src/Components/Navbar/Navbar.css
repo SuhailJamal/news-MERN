@@ -94,6 +94,7 @@
 @media screen and (max-width: 768px) {
   .navbar {
     position: relative;
+    height: 60px;
   }
   .navbar-links {
     display: none;

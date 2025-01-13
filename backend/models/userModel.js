@@ -5,4 +5,4 @@ const userSchema = mongoose.Schema({
   Email: { type: String, required: [true, "Email is Required"], unique: true },
   Password: { type: String, required: [true, "Password is neccesary"] },
 });
-module.exports = mongoose.model("userModel", userSchema);
+module.exports = mongoose.model("usersOfDailyGlobe", userSchema);

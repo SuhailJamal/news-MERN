@@ -40,6 +40,7 @@ const Home = (props) => {
       const response = await axios.get(
         `http://localhost:500/api/news/${props.endpoint}`
       );
+      console.log(response.data.articles);
       setArticles(response.data.articles);
     };
     fetchArticles();
